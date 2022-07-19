@@ -1,4 +1,4 @@
-# Cyclistic_Bike_Sharing_Data_Analysis
+# Cyclistic Bike Sharing Data Analysis
  Data analysis on Bike sharing service
 
 The objective of this study is to find out the answers for following questions through data:
