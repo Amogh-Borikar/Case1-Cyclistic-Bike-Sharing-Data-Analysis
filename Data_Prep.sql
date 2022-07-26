@@ -1,3 +1,5 @@
+-- Table Consolidation for 12 month data
+
 CREATE TABLE "consolidated" (
 	"ride_id"	TEXT,
 	"rideable_type"	TEXT,
@@ -62,3 +64,27 @@ FROM T_202204;
 INSERT INTO consolidated
 SELECT *
 FROM T_202205;
+
+-- total number of rows
+
+SELECT count(ride_id)
+FROM "consolidated"
+
+-- Check if there is any null rideable_type or member_casual
+
+SELECT count(ride_id)
+FROM "consolidated"
+WHERE rideable_type IS NULL
+OR member_casual IS NULL
+
+-- Check the breakdown by rideable_type
+
+SELECT rideable_type, COUNT(rideable_type)
+FROM "consolidated"
+GROUP BY rideable_type
+
+-- Check the breakdown by member_casual
+
+SELECT member_casual, COUNT(member_casual)
+FROM "consolidated"
+GROUP BY member_casual
